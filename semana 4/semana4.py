@@ -25,9 +25,6 @@ list(agenda.keys())
 for i in agenda:
     print(agenda)
 
-for i, j in agenda.items():
-    print('nombre:',persona )
-
 
 for x in agenda.keys():
     print(x)
@@ -53,3 +50,22 @@ agenda['sofia castro'] = sofia
 # segunda op :
 agenda.update({'sofia alfaro': sofia})
 pass
+
+def agregar_contac (nombre, telefono, correo):
+    agenda.update({nombre:
+                       {'telefono': telefono,
+                        'correo': correo}})
+
+    agenda[nombre] = {'telefono': telefono,
+                      'correo': correo}
+
+
+agregar_contac(nombre='felipe',
+               telefono='1234123',
+               correo='felipe@gmail.com')
+print(agenda)
+
+lambda: (lambda a, b: a+b)(3, 4)
+x = lambda a, b : a * b
+x = (3, 4)
+
