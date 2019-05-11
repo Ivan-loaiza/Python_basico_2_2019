@@ -54,3 +54,27 @@ class flower(misc):
         a_flower.filaments = self.filaments
         a_flower.stigmas = self.stigmas
         return a_flower
+
+class rose(flower):
+    def __init__(self, lemma_color='red',
+        stigma_color='green',
+                filament_color='yellow',
+                 n_lemma=1, n_stigmas=1, n_filaments=1):
+        super().__init__(n_lemma, n_stigmas, n_filaments)
+        for lemma in self.lemmas:
+             lemma.color = lemma_color
+
+        for stigma in self.stigmas:
+             stigma.color = stigma_color
+
+        for filament in self.filaments:
+            filament.color = filament_color
+
+my_rose_orange = rose('orange', n_lemma=6)
+my_rose_blue = rose('blue', n_lemma=6)
+
+hibrid_rose = my_rose_blue + my_rose_orange
+
+[lemma.color for lemma in hibrid_rose.lemmas]
+
+['blue', 'blue', 'blue', 'orange', 'orange', 'orange']
