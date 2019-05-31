@@ -1,0 +1,135 @@
+1- Cuáles son las diferencias en la lista y la tupla?
+La principal diferencia entre las listas y las tuplas es el hecho de que las listas son mutables, mientras que las tuplas son inmutables.
+ejemplo:
+list = ["manzanas", "peras","peras"]
+a[0] = "piña"
+si son mutables que pasa con las tuplas, no se pueden mutar
+tupla = ("carro", "bus", "avion")
+tupla[0] = "camion"
+type error .....
+2 - Cómo se puede usar expresiones if else en una sóla línea, comúnmente llamadas operaraciones ternarias
+
+a = 1 if b else 0
+
+3 - Para que sirve dir() y help()?
+dir():
+devuelve un objeto ___dir__()
+number = [1, 2, 3]
+print(dir(number))
+
+print('Return Value from empty dir()')
+print(dir())
+help():
+es un metodo interactivo es recomendado intentarlo en su interpretador cuando necesites
+ayuda para escribir en el programa de python y use modulos de python
+help(dict)
+
+help(list)
+
+help(print)
+4 - Que son diccionarios
+
+dict = {
+'name': 'carlos', 'edad':'29', 'sexo':'masculino'
+}
+
+5 - Que son *args y **kwargs ? Como se usan??
+
+En realidad, args y kwargs son nombres que se utilizan por convención y no de manera estricta. De ahí que podamos identificar los conjuntos que representan de la siguiente manera:
+
+Argumentos posicionales: *posargs
+Argumentos con nombre: **nombreargs
+Esta elección arbitraria para identificar los argumentos de la función es posible ya que Python es lo «suficientemente inteligente»
+como para reconocer que los conjuntos 1 y 2 son identificados por * y **,
+respectivamente, seguidos por la designación elegida.
+6 - Qué son índices negativos?
+explicare los indices negativos de la siguiente manera:
+semana = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+lista[-1] hace mención al último elemento de la lista; lista[-2] al penúltimo, y así sucesivamente.
+7 - Como se puede order aleatoriamente -o desordenar- una lista?
+import random
+print random.randrange(10)
+Nos devolverá un numero aleatorio entre 0 y 9 (el 10 no es incluido en el rango)
+print random.randrange(1, 12, 2) #Las opciones son (1, 3, 5, 7, 9, 11)
+print random.randrange(0, 11, 2) #Las opciones son (0, 2, 4, 6, 8, 10)
+8 - Como se puede ordenar una lista ?
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+  print(x)
+sort(nombre de la lista que desea ordenar)
+9 - Explique o justifique los resultados de A0,A1,A2,A3,A4,A5,A6 ?
+
+A0 = dict(zip(('a','b','c','d','e'),(1,2,3,4,5)))
+
+A1 = range(10)
+un rango del (0 al 9) excluyendo el 10
+A2 = sorted([i for i in A1 if i in A0])
+Invertir (opcional): si es verdadero, la lista ordenada se invierte (o se ordena en orden descendente)
+A3 = sorted([A0[s] for s in A0])
+
+A4 = [i for i in A1 if i in A3]
+
+A5 = {i:i*i for i in A1}
+
+A6 = [[i,i*i] for i in A1]
+
+print(A0,A1,A2,A3,A4,A5,A6)
+
+1 --Cómo se pueden generar números aleatorios? enteros y decimales
+
+2 --Qué es pickling y unpickling?
+
+Pickling:
+es un proceso en el que una jerarquía de objetos de Python se convierte en un flujo de bytes.
+
+Descomprimido o unPliking:
+es el proceso inverso de Pickling cuando un flujo de bytes se convierte en una jerarquía de objetos.
+
+3 --Para que sirve la función map, lambda y filter?
+lambda:
+nos ayuda a no repetir las funciones y no esforzarnos mucho para hacer operaciones
+x = lambda a : a + 10
+print(x(5))
+map:
+La función map () aplica una función dada a cada elemento de un iterable y devuelve una lista de los resultados.
+
+El valor devuelto de map ()
+ (objeto de mapa) se puede pasar a funciones como list ()
+ (para crear una lista), set () (para crear un conjunto)
+ y así sucesivamente.
+ ist_numbers = [1, 2, 3, 4]
+tuple_numbers = (5, 6, 7, 8)
+map_iterator = map(lambda x, y: x * y, list_numbers, tuple_numbers)
+print_iterator(map_iterator)
+Output: 5 12 21 32
+filter:
+filtra elementos de una lista o un diccionario
+
+
+4 --Qué es list comprehension, set comprehension y dict comprehension?
+normalmente uno lo utiliza de esta forma en una lista:
+new_list = []
+for i in old_list:
+    if filter(i):
+        new_list.append(expressions(i))
+pero en list comprehension es asi:
+new_list = [expression(i) for i in old_list if filter(i)]
+obtienes el mismo resultado.
+set comprehension:
+{(x, x + 2) for x in r if x + 2 in r}
+dict comprehension:
+A dictionary comprehension takes the form {key: value for (key, value) in iterable}
+# Python code to demonstrate dictionary
+# comprehension
+
+# Lists to represent keys and values
+keys = ['a','b','c','d','e']
+values = [1,2,3,4,5]
+
+# but this line shows dict comprehension here
+myDict = { k:v for (k,v) in zip(keys, values)}
+
+# We can use below too
+# myDict = dict(zip(keys, values))
+
+print (myDict)
